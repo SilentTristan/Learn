@@ -1,3 +1,4 @@
+// ConsoleApplication4.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //头文件
 #include <iostream>
 #include<chrono>
@@ -5,7 +6,7 @@
 using  namespace std;
 using  namespace chrono;
 //O(n)
-void functionl(long long n) {
+void function1(long long n) {
 	long long k = 0;
 	for (long long i = 0; i < n; i++) {
 		k++;
@@ -35,15 +36,18 @@ int main() {
 		cout << "输入n;";
 		cin >> n;
 		milliseconds start_time = duration_cast<milliseconds>(
-			system_clock::now().time_since_epoch_since_epoch()
+			system_clock::now().time_since_epoch()
 			);
 		function1(n);
 		//function2(n);
 			//function3(n);
-			milliseconds end_time = duration_cast<milliseconds>(
-				system_clock::now().time_since_epoch()
-				);
-			cout << "耗时：" << milliseconds(end_time).count() -
-				<<"ms" << endl;
+		milliseconds end_time = duration_cast<milliseconds>(
+			system_clock::now().time_since_epoch()
+			);
+		cout << "耗时：" << milliseconds(end_time).count() -
+			milliseconds(start_time).count()
+			<< " ms" << endl;
 
 	}
+}
+
